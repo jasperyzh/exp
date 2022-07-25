@@ -1,0 +1,61 @@
+/* $primary: #00a19c;
+$secondary: #00635b;
+$dark: #333333;
+
+$headings-color: $primary;
+$headings-font-family: "Lato", sans-serif;
+$headings-font-weight: 700 !default;
+$font-family-base: "Lato", sans-serif;
+
+$enable-responsive-font-sizes: true;
+ */
+
+
+$color-red: #fe4a49;
+$color-white: #f0f0f0;
+$color-black: #0c0f0a;
+
+$color-lightgrey: #e6e6ea;
+
+// $font-heading: "Montserrat", sans-serif;
+$font-heading: "Montserrat", sans-serif;
+$font-body: "Open Sans", sans-serif;
+
+$color-grey: #8a8685;
+
+$color-blue: #0c57a5;
+$color-navy: #022344;
+$color-yellow: #fed766;
+
+$color-blue--hover: rgb(5, 70, 139);
+$color-blue--focus: rgb(5, 70, 139);
+$color-blue--disabled: rgb(83, 121, 161);
+
+$color-orange: #eb972a;
+$color-purple: #4e0b75;
+
+// explore
+$color-brightorange: #fd6a19;
+$color-green: #00a002;
+$color-skyblue: #00bfff;
+$color-brown: #984e1b;
+$color-darkgrey: #20202c;
+
+// quiz
+$color-lightgreen: #9dd346;
+$color-pink: #ff5382;
+
+@mixin bg-gradient-explores {
+    background: rgb(187, 172, 125);
+    background: linear-gradient(4deg, rgba(187, 172, 125, 1) 0%, rgba(252, 247, 234, 1) 100%);
+}
+
+.color {
+    &--grey {
+        color: $color-grey;
+    }
+}
+
+
+$primary: $color-navy;
+
