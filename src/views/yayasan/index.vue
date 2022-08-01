@@ -11,6 +11,28 @@
           <CardVue></CardVue>
         </div>
       </div> -->
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <ClickRevealChart />
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid px-0 py-4">
+        <div class="row">
+          <div class="col">
+            <CarouselParallaxCard />
+          </div>
+        </div>
+      </div>
+
+      <div class="container my-4">
+        <div class="row">
+          <div class="col-10">
+            <accordion :content="faq_content"></accordion>
+          </div>
+        </div>
+      </div>
 
       <article class="my-4">
         <section class="container">
@@ -88,6 +110,9 @@ import Checkout from "../bootstrap-example/Checkout.vue";
 import Pricing from "../bootstrap-example/Pricing.vue";
 import Product from "../bootstrap-example/Product.vue";
 
+import Accordion from "../../components/general/Accordion.vue";
+import CarouselParallaxCard from "../../components/sample/CarouselParallaxCard.vue";
+import ClickRevealChart from "../../components/sample/ClickRevealChart.vue";
 export default {
   components: {
     AnnouncementToast,
@@ -102,6 +127,56 @@ export default {
     Checkout,
     Pricing,
     Product,
+
+    Accordion,
+    CarouselParallaxCard,
+    ClickRevealChart,
+  },
+
+  data() {
+    return {
+      faq_content: [
+        {
+          title: "What happens if my request for donation is successful?",
+          content:
+            "Yayasan PETRONAS will send a letter to the requestor confirming our decision with corresponding instructions on how the donation will be dispensed. The request is usually fulfilled within a period of 2-3 weeks from when we receive complete onwards documentation from the requestor.",
+        },
+        {
+          title:
+            "Will Yayasan PETRONAS inform me if my application is rejected?",
+          content:
+            "Yes, we will send a letter informing the requestor of our decision or we may be in contact if we require further information.",
+        },
+        {
+          title: "What if I need to appeal for an exception? How do I do this?",
+          content:
+            "Unfortunately not. We recommend that you review the general conditions, eligibility and exclusions guidelines provided on our site. Please ensure that your online application is complete and all relevantsupporting documentation and information is provided.",
+        },
+        {
+          title:
+            "Can I appeal a decision or resubmit an application if it is rejected?",
+          content:
+            "Unfortunately not. We recommend that you review the general conditions, eligibility and exclusions guidelines provided on our site. Please ensure that your online application is complete and all relevantsupporting documentation and information is provided.",
+        },
+        {
+          title: "Is there a maximum amount I can request for donation?",
+          content:
+            "Yayasan PETRONAS has a fixed budget each year for donation requests. Please carefully consider the amount you are requesting for and how it will impact the lives of the community you serve mosteffectively.",
+        },
+        {
+          title:
+            "Is the donation request for one time only? What if the request is for an on-going (series) programme / activity?",
+          content:
+            "Yes, it is one time only in each calendar year. If your programme or activity will be run in phases, please indicate clearly in the application the request by calendar year.",
+        },
+        {
+          title:
+            "If my request for donation doesn't fall within the areas of focus, can I still apply?",
+          content:
+            "You are still welcome to submit your requests and we may consider such applications. However, priority will be given to those that fit our eligibility criteria and are not in our exclusions criteria.",
+        },
+      ],
+    };
   },
 };
 </script>

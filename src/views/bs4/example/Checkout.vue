@@ -1,6 +1,193 @@
 <template>
   <div class="bg-light">
     <pre>form-validation.js</pre>
+
+
+    <div class="container bg-white p-5">
+      <div class="row">
+        <div class="col-8">
+
+          <form action="
+          
+          ">
+          <div class="form-row">
+              <div class="col mb-3">
+                <label for="firstName"
+                  >Full name <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder=""
+                  value=""
+                  required=""
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col mb-3">
+                <label for="firstName"
+                  >Email <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder=""
+                  value=""
+                  required=""
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col mb-3">
+                <label for="lastName"
+                  >Mobile Phone <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder=""
+                  value=""
+                  required=""
+                />
+                <div class="invalid-feedback">Valid last name is required.</div>
+              </div>
+              <div class="col mb-3">
+                <label for="country"
+                  >Address (State/Town)
+                  <span class="text-danger">*</span></label
+                >
+                <select class="form-control" id="country" required="">
+                  <option value="">- Select a State -</option>
+                  <option>United States</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col mb-3">
+                <label for="country"
+                  >Area of Interest <span class="text-danger">*</span></label
+                >
+                <select class="form-control" id="country" required="">
+                  <option value="">Volunteer</option>
+                  <option>United States</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+
+              <div class="col mb-3">
+                <label for="country"
+                  >Area of Focus <span class="text-danger">*</span></label
+                >
+                <select class="form-control" id="country" required="">
+                  <option value="">Education</option>
+                  <option>United States</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+
+              <div class="col mb-3">
+                <label for="country"
+                  >Enquiry Subject <span class="text-danger">*</span></label
+                >
+                <select class="form-control" id="country" required="">
+                  <option value="">Collaboration</option>
+                  <option>United States</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label>Message</label>
+                <textarea
+                  class="form-control"
+                  placeholder="Enter your message"
+                  required
+                  rows="4"
+                ></textarea>
+                <div class="invalid-feedback">
+                  Please enter a message in the textarea.
+                </div>
+                <p class="text-right mb-0"><small>500 Characters</small></p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="invalidCheck"
+                  required
+                />
+                <label class="form-check-label" for="invalidCheck">
+                  I agree to receiving updates from Yayasan PETRONAS.
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="invalidCheck"
+                  required
+                />
+                <label class="form-check-label" for="invalidCheck">
+                  I agree to the Personal Data Protection Act (PDPA) -
+                  Permission to collect data. <span class="text-danger">*</span>
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="invalidCheck"
+                  required
+                />
+                <label class="form-check-label" for="invalidCheck">
+                  The information provided is accurate.
+                  <span class="text-danger">*</span>
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="py-5 text-center">
         <img
@@ -95,7 +282,7 @@
         </div>
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Billing address</h4>
-          <form class="needs-validation" novalidate="">
+          <form class="needs-validation">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
@@ -189,7 +376,7 @@
               <div class="col-md-5 mb-3">
                 <label for="country">Country</label>
                 <select
-                  class="custom-select d-block w-100"
+                  class="form-control d-block w-100"
                   id="country"
                   required=""
                 >

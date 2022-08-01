@@ -8,10 +8,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^4.6.1",
-    "bootstrap-icons": "^1.8.3",
+    "@popperjs/core": "^2.11.5",
+    "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.9.1",
     "jquery": "^3.6.0",
+    "legacy-bootstrap": "npm:bootstrap@^4.6.2",
     "popper.js": "^1.16.1",
+    "rellax": "^1.12.1",
     "swiper": "^8.3.1",
     "tiny-slider": "^2.9.4",
     "vue": "^3.2.25",

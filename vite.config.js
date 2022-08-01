@@ -7,9 +7,17 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "~": path.resolve(__dirname, "./src"),
+      "~": path.resolve(__dirname, "./node_modules"),
+      "~bootstrap-icons": path.resolve(__dirname, "node_modules/bootstrap-icons"),
     },
   },
   plugins: [vue()],
   base: "./",
+  // css: {
+  //   preprocessorOptions: {
+  //     scss: {
+  //       additionalData: `@import "bootstrap/scss/`,
+  //     },
+  //   },
+  // },
 });

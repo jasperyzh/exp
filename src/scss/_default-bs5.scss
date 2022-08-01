@@ -1,0 +1,14 @@
+$primary: skyblue;
+
+@import "bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+/* body {
+    background-color: $primary !important;
+}
+ */

@@ -1,32 +1,30 @@
+/**
+ * bootstrap4
+ */
 import "jquery";
-import "bootstrap";
+import "bootstrap/dist/js/bootstrap.bundle";
+import "./scss/_default-bs4.scss";
 
-import "./assets/scss/_default.scss";
-// import "./assets/scss/style-yayasan.scss";
+/**
+ * bootstrap5
+ */
+// import * as bootstrap from "bootstrap";
+// import "./assets/scss/_default-bs5.scss";
 
-import { createApp } from "vue";
-// import Bootstrap from "./views/bootstrap-example/index.vue";
-// import Fishermen from "./views/fishermen/index.vue";
-// import Kwc from "./views/kwc/index.vue";
-// import Mckl from "./views/mckl/index.vue";
-// import Miekl from "./views/miekl/index.vue";
-// import Yayasan from "./views/yayasan/index.vue";
-// import Exp from "./views/Exp.vue";
+// // bs4
+// import Bs4 from "./views/bs4/index.vue";
+// const apps = { Bs4 };
 
-import ScrollAnimation from "./components/sample/ScrollAnimation.vue";
+// // bs5
+// import Bs5 from "./views/bs5/index.vue";
+// const apps = { Bs5 };
 
-const apps = {
-  // "#app": Bootstrap,
-  // "#app": Fishermen,
-  // "#app": Kwc,
-  // "#app": Mckl,
-  // "#app": Miekl,
-  // "app-yayasan": Yayasan,
-  // "app-exp": Exp,
-  ScrollAnimation,
-};
+// experiment
+import Experiment from "./views/Experiment.vue";
+const apps = { Experiment };
 
 // vue_init
+import { createApp } from "vue";
 document.addEventListener("DOMContentLoaded", () => {
   for (const key in apps) {
     // disable for production

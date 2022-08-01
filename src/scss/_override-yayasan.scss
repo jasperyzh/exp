@@ -1,3 +1,5 @@
+// bootstrap5.2
+
 $primary: #00a19c;
 $secondary: #00635b;
 $dark: #333333;
@@ -14,4 +16,22 @@ $accordion-padding-y: 0.75rem;
 $accordion-button-active-color: white; */
 $enable-responsive-font-sizes: true;
 
-@import "./_default.scss";
+/* 
+.accordion {
+    .card-header {
+        background-color: $primary;
+        padding: 0.25rem 1.5rem;
+        border-radius: 0;
+        border-color: $white;
+    }
+    .card-header h2 .btn-link {
+        color: $white;
+        font-weight: bold;
+
+        &:hover,
+        &:active {
+            text-decoration: none;
+        }
+    }
+}
+ */
