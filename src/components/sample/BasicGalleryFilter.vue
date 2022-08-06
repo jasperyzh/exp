@@ -35,7 +35,7 @@
       >
         <div class="content">
           <img
-            :src="img_placeholder[index]"
+            :src="placeholder_images[index]"
             :alt="item.title"
             style="width: 100%"
           />
@@ -60,36 +60,11 @@ function filterSelection(c) {
   if (c == "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "d-block");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "d-block");
-  }
-
-  // if class contains xxx, show/hide
-}
-
-// Show filtered elements
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
+    x[i].classList.add("d-none");
+    if (x[i].className.indexOf(c) > -1) {
+      x[i].classList.remove("d-none");
     }
   }
-}
-
-// Hide elements that are not selected
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
 }
 
 onMounted(() => {
@@ -108,6 +83,8 @@ onMounted(() => {
   }
 });
 
+defineProps(["placeholder_images"]);
+/* 
 const img_placeholder = [
   "https://images.pexels.com/photos/12823101/pexels-photo-12823101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   "https://images.pexels.com/photos/12292899/pexels-photo-12292899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -118,7 +95,7 @@ const img_placeholder = [
   "https://images.pexels.com/photos/12701332/pexels-photo-12701332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   "https://images.pexels.com/photos/12422390/pexels-photo-12422390.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   "https://images.pexels.com/photos/12640456/pexels-photo-12640456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-];
+]; */
 
 const content = [
   {

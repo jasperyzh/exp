@@ -1,15 +1,15 @@
 /**
  * bootstrap4
  */
-import "jquery";
+/* import "jquery";
 import "bootstrap/dist/js/bootstrap.bundle";
-import "./scss/_default-bs4.scss";
+import "./scss/_default-bs4.scss"; */
 
 /**
  * bootstrap5
  */
-// import * as bootstrap from "bootstrap";
-// import "./assets/scss/_default-bs5.scss";
+import * as bootstrap from "bootstrap";
+import "./scss/_default-bs5.scss";
 
 // // bs4
 // import Bs4 from "./views/bs4/index.vue";
@@ -28,7 +28,7 @@ import { createApp } from "vue";
 document.addEventListener("DOMContentLoaded", () => {
   for (const key in apps) {
     // disable for production
-    document.body.insertAdjacentHTML("afterbegin", `<div id="${key}"></div>`);
+    document.body.insertAdjacentHTML("afterbegin", `<div id="${key}" class="site-container"></div>`);
 
     if (document.querySelector(`#${key}`))
       createApp(apps[key]).mount(`#${key}`);
