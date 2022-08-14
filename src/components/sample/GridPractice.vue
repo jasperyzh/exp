@@ -70,8 +70,8 @@
 
       <h3>"best" width for paragraph</h3>
       <code> width: clamp(45ch, 20%, 75ch); </code>
-      <blockquote>
-        <p class="lead" style="width: clamp(45ch, 20%, 75ch)">
+      <blockquote class="blockquote__widthsize">
+        <p class="lead">
           If you really understand Zen… you can use any book. You could use the
           Bible. You could use Alice in Wonderland. You could use the
           dictionary, because… the sound of the rain needs no translation.
@@ -278,12 +278,12 @@ const appearOnScroll = new IntersectionObserver(
     // options
     root: null, // viewport
     threshold: 0, // more than 25% of the element within view
-    rootMargin: "0px 0px 200px 0px", // "-150px 0px -200px 0px" (must use px)
+    rootMargin: "200px 0px 200px 0px", // "-150px 0px -200px 0px" (must use px)
   }
 );
 </script>
 
-<style>
+<style scoped>
 body {
   background-color: gold;
 }
@@ -298,16 +298,18 @@ img {
 .site-container {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 0 minmax(420px, 1024px) minmax(300px, 1fr) 1fr;
+  grid-template-columns: 1fr minmax(300px, 1024px) auto 1fr;
 }
 .site-container > header {
   grid-column: 1/-1;
 }
 .site-container > main {
-  grid-column: 3/4;
+  grid-column: 2/3;
+  width: clamp(1024px, 1fr, 1200px);
 }
 .site-container > aside {
   grid-column: -2/-3;
+  inline-size: 300px;
 }
 .site-container > footer {
   grid-column: 1/ -1;
@@ -315,8 +317,7 @@ img {
 
 @media (max-width: 1024px) {
   .site-container {
-    grid-template-columns: 1fr 0 minmax(420px, 1024px) 0 1fr;
-    column-gap: 0.4rem;
+    grid-template-columns: 1fr minmax(300px, 1024px) 1fr;
   }
   .site-container > aside {
     display: none;
@@ -405,6 +406,7 @@ h2.css_value {
     filter: sepia(0);
   }
 }
+
 .masthead__size {
   max-height: 100vh;
 }
@@ -454,5 +456,9 @@ h2.css_value {
   clip-path: inset(0 -100vmax);
   color: #ededed;
   background-color: var(--bg-color);
+}
+
+.blockquote__widthsize {
+  width: clamp(45ch, 20%, 75ch);
 }
 </style>

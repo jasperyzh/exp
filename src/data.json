@@ -1,0 +1,48 @@
+{
+  "pages": [
+    {
+      "id": 1,
+      "name": "Home",
+      "slug": "home",
+      "img_src": "home.jpg",
+      "description": "Welcome to homepage"
+    },
+    {
+      "id": 2,
+      "name": "Experiment",
+      "slug": "experiment",
+      "img_src": "experiment.jpg",
+      "description": "Current experiment."
+    },
+    {
+      "id": 3,
+      "name": "Thomson",
+      "slug": "thomson",
+      "img_src": "thomson.jpg",
+      "description": "Thomson mockup"
+    },
+    {
+      "id": 4,
+      "name": "p5",
+      "slug": "p5",
+      "img_src": "p5js.jpg",
+      "description": "p5js page description"
+    }
+  ],
+  "p5": [
+    {
+      "id": 1,
+      "name": "Array of Army",
+      "slug": "array-of-army",
+      "img_src": "array-of-army.jpg",
+      "description": "Array of Army descriptions"
+    },
+    {
+      "id": 2,
+      "name": "Cube Wave",
+      "slug": "cube-wave",
+      "img_src": "cube-wave.jpg",
+      "description": "Cube Wave Processing"
+    }
+  ]
+}

@@ -25,6 +25,13 @@
       optio.
     </p>
   </section>
+
+  <hr />
+
+  <section>
+    <h1 class="animate__animated">An animated element</h1>
+    <pre>animate__bounce</pre>
+  </section>
 </template>
 
 <script setup>
@@ -72,7 +79,27 @@ const appearOnScroll = new IntersectionObserver(
     // options
     root: null, // viewport
     threshold: 1, // more than 25% of the element within view
-    rootMargin: "0px 0px 100px 0px", // "-150px 0px -200px 0px" (must use px)
+    rootMargin: "0px 0px -200px 0px", // "-150px 0px -200px 0px" (must use px)
+  }
+);
+
+const appearOnScrollAnimateCss = new IntersectionObserver(
+  (entries, onScroll) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        // entry.target.classList.remove("animate__fadeInDown");
+        return;
+      } else {
+        entry.target.classList.add("animate__fadeInDown");
+        // onScroll.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    // options
+    root: null, // viewport
+    threshold: 0.25, // more than 25% of the element within view
+    rootMargin: "100px 0px 100px 0px", // "-150px 0px -200px 0px" (must use px)
   }
 );
 
@@ -97,6 +124,10 @@ onMounted(() => {
   paragraphs.value.forEach((paragraph) => {
     // appearOnScroll
     appearOnScroll.observe(paragraph);
+  });
+
+  document.querySelectorAll(".animate__animated").forEach((item) => {
+    appearOnScrollAnimateCss.observe(item);
   });
 });
 </script>

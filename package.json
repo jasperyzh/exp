@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.9.1",
     "jquery": "^3.6.0",
     "legacy-bootstrap": "npm:bootstrap@^4.6.2",
+    "p5": "^1.4.2",
+    "pixi.js": "^6.5.1",
     "popper.js": "^1.16.1",
     "rellax": "^1.12.1",
     "swiper": "^8.3.1",

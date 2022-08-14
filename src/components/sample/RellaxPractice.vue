@@ -9,22 +9,42 @@
     <div class="container-fluid">
       <div class="row">
         <div class="text-dark">
-          <div class="rellax__center" data-rellax-speed="-3"  data-rellax-percentage="0.5">
+          <div
+            class="rellax__center"
+            data-rellax-speed="-3"
+            data-rellax-percentage="0.5"
+          >
             data-rellax-speed="-3"
           </div>
-          <div class="rellax__center" data-rellax-speed="-2"  data-rellax-percentage="0.5">
+          <div
+            class="rellax__center"
+            data-rellax-speed="-2"
+            data-rellax-percentage="0.5"
+          >
             data-rellax-speed="-2"
           </div>
-          <div class="rellax__center" data-rellax-speed="-1"  data-rellax-percentage="0.5">
+          <div
+            class="rellax__center"
+            data-rellax-speed="-1"
+            data-rellax-percentage="0.5"
+          >
             data-rellax-speed="-1"
           </div>
           <div class="rellax__center ms-5">
             I’m slow and smooth; default speed! data-rellax-speed="-2"
           </div>
-          <div class="rellax__center" data-rellax-speed="0">data-rellax-speed="0"></div>
-          <div class="rellax__center" data-rellax-speed="1">data-rellax-speed="1"></div>
-          <div class="rellax__center" data-rellax-speed="2">data-rellax-speed="2"></div>
-          <div class="rellax__center" data-rellax-speed="3">data-rellax-speed="3"></div>
+          <div class="rellax__center" data-rellax-speed="0">
+            data-rellax-speed="0">
+          </div>
+          <div class="rellax__center" data-rellax-speed="1">
+            data-rellax-speed="1">
+          </div>
+          <div class="rellax__center" data-rellax-speed="2">
+            data-rellax-speed="2">
+          </div>
+          <div class="rellax__center" data-rellax-speed="3">
+            data-rellax-speed="3">
+          </div>
         </div>
       </div>
     </div>
@@ -46,7 +66,8 @@
           </div>
           <svg
             class="rellax"
-            data-rellax-speed="0.1"
+            data-rellax-speed="-1.4"
+            data-rellax-percentage="0.5"
             width="1440"
             height="281"
             viewBox="0 0 1440 281"
@@ -61,7 +82,8 @@
 
           <svg
             class="rellax"
-            data-rellax-speed="-0.5"
+            data-rellax-speed="-1.2"
+            data-rellax-percentage="0.5"
             width="1440"
             height="281"
             viewBox="0 0 1440 281"
@@ -77,6 +99,7 @@
           <svg
             class="rellax"
             data-rellax-speed="-1"
+            data-rellax-percentage="0.5"
             width="1440"
             height="235"
             viewBox="0 0 1440 235"
@@ -92,6 +115,7 @@
           <svg
             class="rellax"
             data-rellax-speed="-1.5"
+            data-rellax-percentage="0.5"
             width="1440"
             height="281"
             viewBox="0 0 1440 281"
@@ -107,6 +131,7 @@
           <svg
             class="rellax"
             data-rellax-speed="-2"
+            data-rellax-percentage="0.5"
             width="1440"
             height="282"
             viewBox="0 0 1440 282"
@@ -122,6 +147,7 @@
           <svg
             class="rellax"
             data-rellax-speed="-2.5"
+            data-rellax-percentage="0.5"
             width="1440"
             height="241"
             viewBox="0 0 1440 241"
@@ -146,6 +172,7 @@ import Rellax from "rellax";
 onMounted(() => {
   var rellax = new Rellax(".rellax", {
     // center: true,
+    // wrapper: ".rellax__container",
   });
 
   var rellax__center = new Rellax(".rellax__center", {
@@ -161,7 +188,7 @@ onMounted(() => {
   height: 50vh;
   & > svg {
     position: absolute;
-    top: 0;
+    bottom: 0;
   }
 }
 </style>
