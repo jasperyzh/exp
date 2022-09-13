@@ -1,0 +1,60 @@
+---
+import LayoutDefault from "@layouts/LayoutDefault.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { sketch: "cube-wave" } },
+    { params: { sketch: "array-of-army" } },
+  ];
+}
+
+const { sketch } = Astro.params;
+
+const sketches = {
+  "cube-wave": () => import("../../p5/220416-cube-wave"),
+  "array-of-army": () => import("../../p5/220729-array-of-army"),
+};
+console.log(sketches["cube-wave"]);
+
+// @todo - import respective sketches
+---
+
+<LayoutDefault>
+  <div class="container py-5">
+    <div class="row">
+      <h1>p5js sketches:</h1>
+      <pre>{sketch}</pre>
+      <ul class="nav">
+        <li class="nav-item">
+          <!-- <div id="canvas"></div> -->
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- how to import dynamically? -->
+  <!--  <script>
+    import p5 from "p5";
+    import CubeWave from "../../p5/220416-cube-wave";
+    const myp5 = new p5(CubeWave, "canvas");
+    console.log(myp5);
+  </script> -->
+
+  <!-- passing variable is for inline only -->
+  <!--  <script define:vars={{ sketch }}>
+    console.log(sketch);
+  </script> -->
+
+  <!-- <script>
+    import p5 from "p5";
+    const sketches = {
+      "cube-wave": () => import("../../p5/220416-cube-wave"),
+      "array-of-army": () => import("../../p5/220729-array-of-army"),
+    };
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      const res = await sketches["cube-wave"]();
+      const myp5 = new p5(res.default, "canvas");
+    });
+  </script> -->
+</LayoutDefault>

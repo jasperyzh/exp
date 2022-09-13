@@ -11,7 +11,9 @@
     <!-- <div :id="`p5sketch`"></div> -->
     <!-- <div :id="`p5sketch-${getSketch.slug}`"></div> -->
 
-    <router-view></router-view>
+    <div id="canvas"></div>
+
+    <router-view :key="$route.path"></router-view>
   </div>
 </template>
 
@@ -21,6 +23,7 @@ import { useRouter, useRoute } from "vue-router";
 import sourceData from "@/data.json";
 
 import GoBack from "@/components/vuerouter/GoBack.vue";
+import p5 from "p5";
 
 const id = defineProps({
   id: {
@@ -29,10 +32,23 @@ const id = defineProps({
   },
 });
 
-// import p5 from "p5";
 // import Sketch from "@/p5/cube-wave.js";
 
 const route = useRoute();
+
+const sketches = {
+  "cube-wave": () => import("@/p5/220416-cube-wave.js"),
+  "array-of-army": () => import("@/p5/220729-array-of-army"),
+};
+
+onMounted(async () => {
+  console.log(route.params.slug);
+
+  const res = await sketches[route.params.slug]();
+  console.log(res);
+  // const res = await import("@/p5/cube-wave.js");
+  const myp5 = new p5(res.default, "canvas");
+});
 
 // const p5_id = computed(() => {
 //   return parseInt(route.params.id);

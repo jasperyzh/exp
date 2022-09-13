@@ -15,7 +15,7 @@
 
 
 <script setup>
-import { placeholder_images } from "../Placeholder";
+import { placeholder_images } from "@/components/AppPlaceholder";
 
 console.log(placeholder_images);
 </script>

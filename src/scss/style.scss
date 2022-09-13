@@ -1,0 +1,38 @@
+// override_bootstrap_variable
+// @import "./override-mckl";
+@import "./override-upskills";
+// @import "./override-yayasan";
+
+// https://getbootstrap.com/docs/4.6/
+// @import "legacy-bootstrap/scss/bootstrap";
+
+// https://getbootstrap.com/docs/5.2/
+@import "bootstrap/scss/bootstrap";
+
+// https://icons.getbootstrap.com/
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+// https://animate.style/#utilities
+@import "animate.css";
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// default styling
+.site-main {
+    // if within site-main
+    // & > .views {
+    //     margin-top: 52.5px;
+    // }
+
+    .layout__content {
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+}

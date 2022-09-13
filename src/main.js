@@ -1,50 +1,29 @@
 /**
- * https://animate.style/#utilities
+ * https://getbootstrap.com/docs/4.6/
  */
-import "animate.css";
+// import "jquery";
+// import "bootstrap/dist/js/bootstrap.bundle";
 
 /**
- * bootstrap4
- */
-/* import "jquery";
-import "bootstrap/dist/js/bootstrap.bundle";
-import "./scss/_default-bs4.scss"; */
-/**
- * bootstrap5
+ * https://getbootstrap.com/docs/5.2/
  */
 import * as bootstrap from "bootstrap";
-import "./scss/_default-bs5.scss";
 
-// // bs4
-// import Bs4 from "./views/bs4/index.vue";
-// const apps = { Bs4 };
-
-// // bs5
-// import Bs5 from "./views/bs5/index.vue";
-// const apps = { Bs5 };
-
-// experiment
-// import Experiment from "./views/Experiment.vue";
-// const apps = { Experiment };
+/**
+ * scss
+ */
+import "@/scss/style.scss";
 
 // vue_router
-import App from "@/App.vue";
 import router from "@/router";
 import AppLink from "@/components/AppLink.vue";
+// vue
+import { createApp } from "vue";
+import App from "@/App.vue";
 const apps = { App };
 
-/* import { createRouter, createWebHistory } from "vue-router";
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-  ],
-}); */
-
-// vue_init
-import { createApp } from "vue";
 document.addEventListener("DOMContentLoaded", () => {
   for (const key in apps) {
-    // disable for production
     document.body.insertAdjacentHTML(
       "afterbegin",
       `<div id="${key}" class="site-container"></div>`
@@ -52,14 +31,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (document.querySelector(`#${key}`)) {
       if (key == "App") {
-        // vue_router
         createApp(apps[key])
+          // global_component
           .component("AppLink", AppLink)
+          // vue_router
           .use(router)
+          // vue_init
           .mount(`#${key}`);
-      } else {
-        createApp(apps[key]).mount(`#${key}`);
       }
+      //
+      // else {
+      //   createApp(apps[key]).mount(`#${key}`);
+      // }
     }
   }
 });

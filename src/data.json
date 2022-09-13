@@ -8,13 +8,6 @@
       "description": "Welcome to homepage"
     },
     {
-      "id": 2,
-      "name": "Experiment",
-      "slug": "experiment",
-      "img_src": "experiment.jpg",
-      "description": "Current experiment."
-    },
-    {
       "id": 3,
       "name": "Thomson",
       "slug": "thomson",

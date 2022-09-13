@@ -20,44 +20,60 @@ const routes = [
     component: Home,
     alias: "/home",
   },
+
+  // push several page via glob
+
+  
+  // {
+  //   path: "/experiment",
+  //   name: "Experiment",
+  //   component: () => import("@/views/Experiments.vue"),
+  // },
+  {
+    path: "/exp-pixi",
+    name: "Pixi",
+    component: () => import("@/views/exp-pixi.vue"),
+  },
+  {
+    path: "/exp-p5",
+    name: "P5js",
+    component: () => import("@/views/exp-p5.vue"),
+  },
+
+
+  {
+    path: "/thomson",
+    name: "Thomson",
+    component: () => import("@/views/micro/Thomson.vue"),
+  },
+
+  // vue_router_authenticate
   {
     path: "/login",
     name: "Login",
-    component: () => import("@/views/Login.vue"),
+    component: () => import("@/views/app/Login.vue"),
   },
   {
     path: "/protected",
     name: "Protected",
-    component: () => import("@/views/Protected.vue"),
+    components: {
+      default: () => import("@/views/app/Protected.vue"),
+      AppSidebar: () => import("@/components/AppSidebar.vue"),
+    },
     meta: {
       requiresAuth: true,
     },
-    /*  children: [
-      // nested route_view
-      {
-        path: "user-secret",
-        name: "User Secret",
-        component: () => import("@/views/UserSecret.vue"),
-      },
-    ], */
   },
   {
     path: "/protected/user-secret",
     name: "UserSecret",
-    component: () => import("@/views/UserSecret.vue"),
+    components: {
+      default: () => import("@/views/app/UserSecret.vue"),
+      AppSidebar: () => import("@/components/AppSidebar.vue"),
+    },
     meta: {
       requiresAuth: true,
     },
-  },
-  {
-    path: "/experiment",
-    name: "Experiment",
-    component: () => import("@/Experiment.vue"),
-  },
-  {
-    path: "/thomson",
-    name: "Thomson",
-    component: () => import("@/views/Thomson.vue"),
   },
   {
     path: "/p5",
@@ -82,9 +98,9 @@ const routes = [
 
           // doesnt work using vue_router4, see compositionapi guide - https://vueschool.io/lessons/route-guards
           // allows keeping the URL while rendering a different page
-          /* params: { pathMatch: to.path.split("/").slide(1) },
-          query: to.query,
-          hash: to.hash, */
+          // params: { pathMatch: to.path.split("/").slide(1) },
+          // query: to.query,
+          // hash: to.hash,
         };
       }
     },
@@ -100,54 +116,31 @@ const routes = [
         }),
       },
     ],
-
-    // children add through here
   },
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
-    component: () => import("@/views/404.vue"),
+    component: () => import("@/views/app/404.vue"),
   },
-  /*  {
-    path: "/",
-    name: "Home",
-    component: Home,
-  }, */
-  /* {
-    path: "/kwc",
-    name: "Kwc",
-    component: Kwc,
+  /*
+  samples
+  regularexp on the same directory
+  {
+    path: "/:orderId(\\d+)",
+    name: "orders",
   },
   {
-    path: "/yayasan",
-    name: "Yayasan",
-    component: Yayasan,
-  },
+    path: "/:productName",
+    name: "product",
+  }, 
   {
-    path: "/yayasan/annual-report-2020",
-    name: "YayasanAnnualReport",
-    component: YayasanAnnualReport,
+    // do unlimited slashes: localhost/example/1/2/3/4
+    path: "/example/:id+",
+    // unlimited slashes that only can be number (+ sign)
+    path: "/example/:id(\\d+)+",
+    component: () => import("@/views/Examples.vue"),
   },
-  {
-    path: "/miekl",
-    name: "Miekl",
-    component: Miekl,
-  },
-  {
-    path: "/mckl",
-    name: "Mckl",
-    component: Mckl,
-  },
-  {
-    path: "/fishermen",
-    name: "Fishermen",
-    component: Fishermen,
-  }, */
-  /*  {
-    path: "/bootstrap-example",
-    name: "Bootstrap",
-    component: BootstrapExample,
-  }, */
+  */
 ];
 
 const router = createRouter({
@@ -161,7 +154,6 @@ const router = createRouter({
         setTimeout(() => resolve({ top: 0, behavior: "smooth" }), 100);
       })
     );
-    // return { top: null, left: null, behavior: null };
   },
 });
 

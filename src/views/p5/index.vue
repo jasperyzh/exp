@@ -1,8 +1,7 @@
 <template>
-  <div class="views p5_home">
+  <div :class="`layout__content ${$route.name}`">
     <h1>p5js sketches</h1>
 
-    <h2>By ID</h2>
     <ul class="nav">
       <li class="nav-item" v-for="sketch in getSketchesPage" :key="sketch.id">
         <router-link
@@ -16,30 +15,23 @@
         </router-link>
       </li>
     </ul>
-    <!-- <hr />
-  <h2>By SLUG</h2>
-  <ul class="nav">
-    <li class="nav-item" v-for="sketch in getSketchesPage" :key="sketch.id">
-      <router-link
-        class="nav-link"
-        :to="{ name: 'p5.showbyslug', params: { slug: sketch.slug } }"
-      >
-        {{ sketch.name }}
-      </router-link>
-    </li>
-  </ul> -->
   </div>
 </template>
 
 <script setup>
 import { computed } from "vue";
-import { /* useRouter, */ useRoute } from "vue-router";
 import sourceData from "@/data.json";
 
 const getSketchesPage = computed(() => {
   return sourceData.p5;
 });
 
+// watch any changes to ref()
+/* watch(route, async (to, from) => {
+  console.log(to, from);
+}); */
+
+// fetch data
 /* const getData = () => {
   fetch("https://api.openbrewerydb.org/breweries/5494", {
     headers: { "Content-type": "application/json" },

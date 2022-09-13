@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { placeholder_images } from "../Placeholder";
+import { placeholder_images } from "@/components/AppPlaceholder";
 </script>
 
 <style lang="scss" scoped>
