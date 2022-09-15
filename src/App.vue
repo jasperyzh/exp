@@ -18,17 +18,17 @@
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item" v-for="page in pages" :key="page.id">
-                <router-link class="nav-link" :to="{ name: page.name }">{{
-                page.name
+              <li class="nav-item" v-for="page in pages" :key="page">
+                <router-link class="nav-link" :to="{ name: page }">{{
+                page
                 }}</router-link>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <AppLink class="nav-link" :to="{ name: 'Protected' }">AuthPage</AppLink>
               </li>
               <li class="nav-item">
                 <AppLink class="nav-link" to="https://dev.to/">dev.to</AppLink>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -43,11 +43,13 @@
       </transition>
     </router-view>
 
-    <router-view class="views main" v-slot="{ Component }">
-      <transition name="slide" mode="out-in">
-        <component :is="Component" :key="$route.path"></component>
-      </transition>
-    </router-view>
+    <Suspense>
+      <router-view class="views main" v-slot="{ Component }">
+        <transition name="slide" mode="out-in">
+          <component :is="Component" :key="$route.path"></component>
+        </transition>
+      </router-view>
+    </Suspense>
   </main>
 
   <footer class="site-footer bg-light">
@@ -61,9 +63,11 @@
 </template>
 
 <script setup>
-
-import SourceData from "@/data.json";
-const pages = SourceData.pages;
+const pages = [
+  "Pixi",
+  "P5js",
+  "Bootstrap"
+]
 
 </script>
 

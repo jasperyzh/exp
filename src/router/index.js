@@ -11,7 +11,7 @@ import Fishermen from "@/views/fishermen/Index.vue"; */
 // import Experiment from "@/Experiment.vue";
 // import Thomson from "@/views/Thomson.vue";
 import Home from "@/views/Home.vue";
-import sourceData from "@/data.json";
+// import sourceData from "@/data.json";
 
 const routes = [
   {
@@ -20,15 +20,6 @@ const routes = [
     component: Home,
     alias: "/home",
   },
-
-  // push several page via glob
-
-  
-  // {
-  //   path: "/experiment",
-  //   name: "Experiment",
-  //   component: () => import("@/views/Experiments.vue"),
-  // },
   {
     path: "/exp-pixi",
     name: "Pixi",
@@ -39,7 +30,19 @@ const routes = [
     name: "P5js",
     component: () => import("@/views/exp-p5.vue"),
   },
+  {
+    path: "/exp-bs",
+    name: "Bootstrap",
+    component: () => import("@/views/exp-bs/index.vue"),
+  },
 
+  // push several page via glob
+
+  // {
+  //   path: "/experiment",
+  //   name: "Experiment",
+  //   component: () => import("@/views/Experiments.vue"),
+  // },
 
   {
     path: "/thomson",
@@ -80,43 +83,43 @@ const routes = [
     name: "p5",
     component: () => import("@/views/p5/index.vue"),
   },
-  {
-    path: "/p5/:id/:slug",
-    name: "p5.show",
-    component: () => import("@/views/p5/_sketch.vue"),
-    props: (route) => ({
-      ...route.params,
-      id: parseInt(route.params.id),
-    }),
-    beforeEnter(to, from) {
-      const exists = sourceData.p5.find(
-        (sketch_data) => sketch_data.id === parseInt(to.params.id)
-      );
-      if (!exists) {
-        return {
-          name: "NotFound",
+  // {
+  //   path: "/p5/:id/:slug",
+  //   name: "p5.show",
+  //   component: () => import("@/views/p5/_sketch.vue"),
+  //   props: (route) => ({
+  //     ...route.params,
+  //     id: parseInt(route.params.id),
+  //   }),
+  //   beforeEnter(to, from) {
+  //     const exists = sourceData.p5.find(
+  //       (sketch_data) => sketch_data.id === parseInt(to.params.id)
+  //     );
+  //     if (!exists) {
+  //       return {
+  //         name: "NotFound",
 
-          // doesnt work using vue_router4, see compositionapi guide - https://vueschool.io/lessons/route-guards
-          // allows keeping the URL while rendering a different page
-          // params: { pathMatch: to.path.split("/").slide(1) },
-          // query: to.query,
-          // hash: to.hash,
-        };
-      }
-    },
-    children: [
-      // nested route_view
-      {
-        path: ":sketch",
-        name: "sketch.show",
-        component: () => import("@/views/Home.vue"),
-        props: (route) => ({
-          ...route.params,
-          id: parseInt(route.params.id),
-        }),
-      },
-    ],
-  },
+  //         // doesnt work using vue_router4, see compositionapi guide - https://vueschool.io/lessons/route-guards
+  //         // allows keeping the URL while rendering a different page
+  //         // params: { pathMatch: to.path.split("/").slide(1) },
+  //         // query: to.query,
+  //         // hash: to.hash,
+  //       };
+  //     }
+  //   },
+  //   children: [
+  //     // nested route_view
+  //     {
+  //       path: ":sketch",
+  //       name: "sketch.show",
+  //       component: () => import("@/views/Home.vue"),
+  //       props: (route) => ({
+  //         ...route.params,
+  //         id: parseInt(route.params.id),
+  //       }),
+  //     },
+  //   ],
+  // },
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
