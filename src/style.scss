@@ -1,0 +1,17 @@
+// https://getbootstrap.com/docs/5.2/
+@import "bootstrap/scss/bootstrap";
+
+// https://icons.getbootstrap.com/
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+// https://animate.style/#utilities
+@import "animate.css";
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}

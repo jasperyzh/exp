@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <div class="exp-p5 container my-4">
     <h1>EXP|p5js</h1>
     <div id="canvas" style="position: relative"></div>
     <pre>
@@ -8,14 +8,13 @@
             [getting started setup - p5js-overview](https://github.com/processing/p5.js/wiki/p5.js-overview)
             
         </pre>
-  </Layout>
+  </div>
 </template>
 
 <script setup>
-import Layout from "@/components/LayoutDefault.vue";
 import { onMounted } from "vue";
 import p5 from "p5";
-// import "/public/p5.sound";
+import "/public/p5.sound-0.9.0";
 onMounted(() => {
   new p5(sketch, `canvas`);
 })

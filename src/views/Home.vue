@@ -1,44 +1,24 @@
 <template>
 
-  <div class="views experiment">
+  <div class="home container my-4">
 
-    <pre>
-      - [spite-ccapture.js- A library to capture canvas-based animations at a fixed framerate](https://github.com/spite/ccapture.js/)
-    </pre>
+    <h1>exp</h1>
+    <hr>
 
-    <!-- add some button to switch between layout? -->
-    <!-- <GridLayoutPractice /> -->
+    <hr>
+    <h2 class="h6">Try out:</h2>
+    <ul>
+      <li>
+        <a target="_blank" href="https://github.com/spite/ccapture.js/">spite-ccapture.js- A library to capture canvas-based animations
+          at a fixed framerate</a>
+      </li>
+    </ul>
 
-    <!-- <IntersectionObserverPractice /> -->
-    <!-- <CardAwwwardDisplayVue />  -->
-    <!-- <BasicGalleryFilter :placeholder_images="placeholder_images" /> -->
-
-    <!-- need more work -->
-    <!-- <BasicSvgDivider /> -->
-    <!-- <RellaxPractice /> -->
-    <!-- <HorizontalMediaScroller /> -->
-    <!-- <LazyLoadingPractice /> -->
-    <!-- <PixiGetStarted /> -->
-
-    <!-- for experimental usage -->
-    <!-- <Bs5Cheatsheet /> -->
-
-    <!-- wabisabi_components -->
-    <!-- <CalendarButtonGenerator /> -->
-    <!-- <CsvTable /> -->
-    <!-- <SwiperjsYoutubeGallery /> -->
-    <!-- <FullpageSmoothScrollParallax /> -->
-    <!-- <CssStickyTextFullpageScrolling /> -->
-    <!-- // import CalendarButtonGenerator from "./_components/CalendarButtonGenerator.vue";
-    // import CsvTable from "./_components/CsvTable.vue";
-    // import SwiperjsYoutubeGallery from "./_components/SwiperjsYoutubeGallery.vue";
-    // import FullpageSmoothScrollParallax from "./_components/FullpageSmoothScrollParallax.vue";
-    // import CssStickyTextFullpageScrolling from "./_components/CssStickyTextFullpageScrolling.vue";
-    // import VuelidatorBasic from "./_components/VuelidatorBasic.vue"; -->
   </div>
 </template>
 
 <style>
+
 </style>
 
 <script setup>
@@ -86,7 +66,7 @@ async function routerErrors() {
   }
 }
 
-// import GridLayoutPractice from "@/components/GridLayoutPractice.vue";
+// import GridLayout from "@/components/GridLayout.vue";
 // import IntersectionObserverPractice from "@/components/IntersectionObserverPractice.vue";
 // import CardAwwwardDisplayVue from "@/components/sample/CardAwwwardDisplay.vue";
 // import BasicGalleryFilter from "@/components/sample/BasicGalleryFilter.vue";

@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <div class="exp-pixi container my-4">
     <h1>EXP|pixijs</h1>
     <section class="pixi__getstarted">
       <p>
@@ -7,12 +7,13 @@
           href="https://pixijs.io/examples/#/demos-basic/container.js">https://pixijs.io/examples/#/demos-basic/container.js</a>
       </p>
     </section>
-  </Layout>
+  </div>
 </template>
 <script setup>
-import Layout from "@/components/LayoutDefault.vue";
 import { onMounted } from "@vue/runtime-core";
 import * as PIXI from "pixi.js";
+
+import MouseTrail from "@/exp-pixi/assets/mousetrail.png";
 
 const app = new PIXI.Application({
   width: 512,
@@ -26,7 +27,7 @@ onMounted(() => {
 });
 
 // Get the texture for rope.
-const trailTexture = PIXI.Texture.from("/mousetrail.png");
+const trailTexture = PIXI.Texture.from(MouseTrail);
 const historyX = [];
 const historyY = [];
 // historySize determines how long the trail will be.
