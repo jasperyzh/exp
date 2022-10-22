@@ -15,6 +15,12 @@
       - one-page showcase CSS Animations
       - How to design & host a website for free?
       - How to add domain-name to your free website?
+      - pull all my youtube subscribers with tag filters
+        1. gather all subscribers
+        2. find a way to categorize or tag it
+        3. pull all into website
+        4. add filter
+        5. visualize it
     </pre>
     <hr>
   </div>
