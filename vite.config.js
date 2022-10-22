@@ -16,7 +16,7 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
-  base: "/exp/",
+  base: "/",
   // css: {
   //   preprocessorOptions: {
   //     scss: {
