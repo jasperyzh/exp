@@ -1,7 +1,7 @@
 <template>
     <!-- https://vueschool.io/lessons/route-transitions -->
     <header class="site-header">
-        <router-link class="logo" to="/">exp</router-link>
+        <router-link class="logo" :to="{ name: 'Home'}">exp</router-link>
         <nav>
             <ul>
                 <li v-for="item in nav_items" :key="item">
