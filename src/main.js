@@ -5,7 +5,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "./pages/Home.vue";
 const routes = [
   {
-    path: "/exp",
+    path: "/",
     name: "Home",
     component: Home,
     alias: "/home",
@@ -133,7 +133,6 @@ const routes = [
 ];
 const router = createRouter({
   history: createWebHistory(),
-  base: '/exp/', // for https://jasperyzh.github.io/exp/
   routes,
   linkActiveClass: "active",
   scrollBehavior(to, from, savedPosition) {

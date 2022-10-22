@@ -6,8 +6,7 @@
     "start": "code . && vite",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "vite build && git subtree push --prefix dist origin gh-pages"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
