@@ -1,21 +1,21 @@
 <template>
     <div :class="`site-container ${classes}`">
 
-        <Header v-if="!layout_options.hide_header" :nav_items="nav_items" />
+        <Header :nav_items="nav_items" />
 
         <slot></slot>
 
-        <Footer v-if="!layout_options.hide_footer" />
-
+        <Footer />
     </div>
 </template>
 
 <script setup>
-import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
-import { computed, reactive } from "@vue/runtime-core";
+import Header from "./Header.vue";
+import Footer from "./Footer.vue";
 
-const props = defineProps(["nav_items", "layout_options"]);
+import { computed } from "@vue/runtime-core";
+
+const props = defineProps(["nav_items"]);
 
 const classes = computed(() => {
     let output = "";
@@ -30,17 +30,7 @@ const classes = computed(() => {
 </script>
 
 
-<style lang="scss">
-// header
-.site-container:has(> header)>main {
-    margin-top: 56px;
-}
-
-#offcanvasNavbar2 {
-    top: 56px;
-}
-
-// layout
+<style>
 html,
 body,
 #app,
@@ -52,23 +42,25 @@ body,
     display: grid;
     column-gap: 1rem;
     grid-template-rows: auto 1fr auto;
+}
 
-    // layout_full_width_content
+/* layout_full_width_content */
+.site-container {
     grid-template-columns: 1fr 1fr 1fr;
+}
 
-    &>header {
-        grid-column: 1 / -1;
-        grid-row: 1 / 2;
-    }
+.site-container>header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+}
 
-    &>main {
-        grid-column: 1 / -1;
-        grid-row: 2 / 3;
-    }
+.site-container>main {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+}
 
-    &>footer {
-        grid-column: 1 / -1;
-        grid-row: -1 / -2;
-    }
+.site-container>footer {
+    grid-column: 1 / -1;
+    grid-row: -1 / -2;
 }
 </style>
