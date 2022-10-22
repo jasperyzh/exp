@@ -30,3 +30,7 @@ git subtree push --prefix dist origin gh-pages
 git push -f git@github.com:jasperyzh/exp.git main:gh-pages
 
 cd -
+
+
+# https://stackoverflow.com/questions/33172857/how-do-i-force-a-subtree-push-to-overwrite-remote-changes
+# git push origin `git subtree split --prefix dist main`:gh-pages --force
