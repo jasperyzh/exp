@@ -12,6 +12,7 @@
       <Link to="https://www.youtube.com/playlist?list=PLNYkxOF6rcIAkCqEvHXCAkbRVhjEMbf_i">GUI Snippet - Google Chrome Dev</Link>
 
       <h2>Blog</h2>
+      - deploy astro-blog
       - one-page showcase CSS Animations
       - How to design & host a website for free?
       - How to add domain-name to your free website?
