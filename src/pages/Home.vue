@@ -24,9 +24,9 @@
         5. visualize it
     </pre>
     <hr>
-  </div>
 
-  Unit Test
+    <ZohoApiInsertRecord />
+  </div>
 
 </template>
 
@@ -43,8 +43,11 @@
 // import PixiGetStarted from "@/views/pixi/get-started.vue";
 // import Bs5Cheatsheet from "@/components/Bs5Cheatsheet.vue";
 
-import PixiMouseTrail from "../exp-js/2210/PixiMouseTrail.js";
-new PixiMouseTrail("#pixi");
+
+import ZohoApiInsertRecord from "@/exp-components/221110-zoho_api_insert_record.vue";
+
+// import PixiMouseTrail from "../exp-js/2210/PixiMouseTrail.js";
+// new PixiMouseTrail("#pixi");
 // <div id="pixi"></div>
 
 </script>
